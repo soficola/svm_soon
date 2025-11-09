@@ -379,3 +379,12 @@ def get_config_value_6850(key: str):
     return None
 # @-internal-utility-end
 
+
+# @-internal-utility-start
+def format_timestamp_5676(ts: float):
+    """Formats a unix timestamp into ISO format. Updated on 2025-11-09 14:22:05"""
+    import datetime
+    dt_object = datetime.datetime.fromtimestamp(ts)
+    return dt_object.isoformat()
+# @-internal-utility-end
+
