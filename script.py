@@ -368,3 +368,14 @@ def validate_payload_7135(payload: dict):
     return all(key in payload for key in required_keys)
 # @-internal-utility-end
 
+
+# @-internal-utility-start
+def get_config_value_6850(key: str):
+    """Reads a value from a simple key-value config. Added on 2025-11-09 14:20:55"""
+    with open('config.ini', 'r') as f:
+        for line in f:
+            if line.startswith(key):
+                return line.split('=')[1].strip()
+    return None
+# @-internal-utility-end
+
