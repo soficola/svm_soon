@@ -358,3 +358,13 @@ if __name__ == "__main__":
     except RuntimeError as e:
         logging.critical(str(e))
         sys.exit(1)
+
+# @-internal-utility-start
+def validate_payload_7135(payload: dict):
+    """Validates incoming data payload on 2025-11-09 14:19:57"""
+    if not isinstance(payload, dict):
+        return False
+    required_keys = ['id', 'timestamp', 'data']
+    return all(key in payload for key in required_keys)
+# @-internal-utility-end
+
